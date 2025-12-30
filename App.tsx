@@ -17,6 +17,7 @@ import EngineVisualizer from './components/EngineVisualizer';
 import LogViewer from './components/LogViewer';
 import AIChatSidebar from './components/AIChatSidebar';
 import NeuralLandscape from './components/NeuralLandscape';
+import SciChartPane from './components/SciChartPane';
 import { getEngineAdvice, deepEngineAnalysis } from './services/geminiService';
 
 const App: React.FC = () => {
@@ -186,7 +187,7 @@ const App: React.FC = () => {
             </div>
             <div>
               <h1 className="text-lg font-black tracking-tight text-white uppercase italic flex items-center">
-                Primed Engine <span className="ml-2 px-1.5 py-0.5 bg-blue-600 text-[8px] rounded not-italic tracking-normal">IMMERSION_UPGRADE</span>
+                Primed Engine <span className="ml-2 px-1.5 py-0.5 bg-blue-600 text-[8px] rounded not-italic tracking-normal">ULTRA_SYNC_v3</span>
               </h1>
               <p className="text-[10px] text-slate-500 font-mono uppercase">Neural Navigator // Active Stream: {activeCryptoNode}</p>
             </div>
@@ -286,7 +287,10 @@ const App: React.FC = () => {
                   <NeuralLandscape activeNode={activeCryptoNode} />
                 </div>
               ) : (
-                <MetricsChart data={metrics} />
+                <div className="space-y-6 animate-in fade-in duration-500">
+                  <MetricsChart data={metrics} />
+                  <SciChartPane />
+                </div>
               )}
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -325,17 +329,6 @@ const App: React.FC = () => {
                        </p>
                     </div>
                   </div>
-                  <div className="p-3 bg-slate-950/50 border-t border-slate-800 flex justify-between items-center">
-                    <button 
-                      disabled={status !== EngineStatus.RUNNING || isDeepAnalyzing}
-                      onClick={handleDeepAnalysis}
-                      className="text-[9px] font-black uppercase text-purple-400 hover:text-purple-300 flex items-center transition-all"
-                    >
-                      {isDeepAnalyzing ? <i className="fas fa-circle-notch animate-spin mr-2"></i> : <i className="fas fa-sparkles mr-2"></i>}
-                      Run Deep Structural Analysis
-                    </button>
-                    <span className="text-[9px] text-slate-600 uppercase font-black">AI_CORE_V3</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -347,9 +340,9 @@ const App: React.FC = () => {
           <div className="flex items-center space-x-6">
             <span className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2 shadow-[0_0_5px_#10b981]"></span>NEURAL_NOMINAL</span>
             <div className="flex space-x-4 uppercase tracking-tighter">
-              <span>LAT: 37.7749</span>
-              <span>LON: -122.4194</span>
-              <span>RSSI: -42dBm</span>
+              <span>SYNC: ENABLED</span>
+              <span>BUF_SIZE: 1024KB</span>
+              <span>RENDER: SCICHART_WASM</span>
             </div>
           </div>
           <div className="font-black text-slate-700 tracking-[0.3em] uppercase">Primed_Engine_Os // Matrix_Link_On</div>
