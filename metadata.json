@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Primed Engine Management System",
+  "description": "A high-performance dashboard for monitoring, simulating, and optimizing complex computational engines, featuring AI-driven diagnostics powered by Gemini.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
